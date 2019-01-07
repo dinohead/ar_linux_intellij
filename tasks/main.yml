@@ -1,0 +1,48 @@
+---
+
+- name: FILE | Create intellij directory
+  become: true
+  become_user: root
+  file:
+    path: /opt/intellij
+    state: directory
+    owner: root
+    group: root
+    mode: 'u=rwx,g=rx,o=rx'
+
+- name: UNARCHIVE | Fetch the intellij idea binary and extract
+  become: true
+  become_user: root
+  unarchive:
+    src: "{{ linux_intellij_src }}"
+    dest: /opt/intellij
+    remote_src: true
+    owner: root
+    group: root
+
+- find:
+    path: /opt/intellij
+    file_type: directory
+    pattern: "idea-IC*"
+  register: linux_intellij_files
+
+- name: FILE | Link to /usr/local/bin to add to path
+  become: true
+  become_user: root
+  file:
+    src: "{{ linux_intellij_files.files[0].path }}/bin/idea.sh"
+    dest: /usr/local/bin/idea
+    state: link
+    owner: root
+    group: root
+    mode: 'u=rwx,g=rx,o=rx'
+
+- name: TEMPLATE | Template the Desktop Launcher
+  become: true
+  become_user: root
+  template:
+    src: idea.desktop.j2
+    dest: /usr/share/applications/idea.desktop
+    owner: root
+    group: root
+    mode: 'u=rw,g=r,o=r'
