@@ -14,9 +14,9 @@ You can override the variables in any standard Ansible-way (e.g. group_vars, hos
 
 The variables in this role include:
 
-|parameter         |required|default                                                   |choices|comments|
-|:-----------------|:-------|:---------------------------------------------------------|:------|:-------|
-|linux_intellij_src|false   |https://download.jetbrains.com/idea/ideaIC-2018.3.1.tar.gz|       |A URL to download the IntelliJ IDEA CE Linux binary.|
+|parameter         |required|default                                                       |choices|comments|
+|:-----------------|:-------|:-------------------------------------------------------------|:------|:-------|
+|linux_intellij_src|false   |https://download.jetbrains.com/idea/ideaIC-2019.1-jbr11.tar.gz|       |A URL to download the IntelliJ IDEA CE Linux binary.|
 
 ## Example Playbook
 
@@ -62,12 +62,6 @@ SOFTWARE.
 ### Testing
 
 ### Contributing
-
-1. Fork it
-1. Create your feature branch (`git checkout -b my-new-feature`)
-1. Commit your changes (`git commit -am 'Add some feature'`)
-1. Push to the branch (`git push origin my-new-feature`)
-1. Create new Pull Request
 
 ### Git SCM
 Please refer to the .gitignore file and update accordingly depending on your
