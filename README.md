@@ -14,9 +14,9 @@ You can override the variables in any standard Ansible-way (e.g. group_vars, hos
 
 The variables in this role include:
 
-|parameter         |required|default                                                   |choices|comments|
-|:-----------------|:-------|:---------------------------------------------------------|:------|:-------|
-|linux_intellij_src|false   |https://download.jetbrains.com/idea/ideaIC-2018.3.1.tar.gz|       |A URL to download the IntelliJ IDEA CE Linux binary.|
+|parameter         |required|default                                                       |choices|comments|
+|:-----------------|:-------|:-------------------------------------------------------------|:------|:-------|
+|linux_intellij_src|false   |https://download.jetbrains.com/idea/ideaIC-2019.1-jbr11.tar.gz|       |A URL to download the IntelliJ IDEA CE Linux binary.|
 
 ## Example Playbook
 
